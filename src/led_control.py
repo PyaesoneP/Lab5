@@ -15,6 +15,7 @@ def led_thread():
             sleep(delay)
 
 def led_control_init():
+    led.init
     global delay
     t1 = Thread(target=led_thread)
     t1.start()
