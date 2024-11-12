@@ -13,3 +13,10 @@ def led_thread():
             sleep(delay)
             led.set_output(20,0)
             sleep(delay)
+
+def led_control_init():
+    global delay
+    t1 = Thread(target=led_thread)
+    t1.start()
+    #Set initial LED blinking every 1 second after Thread starts
+    delay = 1
