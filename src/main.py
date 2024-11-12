@@ -13,7 +13,16 @@ lcd.lcd_clear()
 def key_pressed(key):
     password.append(key)
     print(password)
+    if key==1:
+        lcd.lcd_clear()
+        lcd.lcd_display_string("LED Control", 1)
+        lcd.lcd_display_string("Blink LED", 2)
     
+    if key==0:
+        lcd.lcd_clear()
+        lcd.lcd_display_string("LED Control", 1)
+        lcd.lcd_display_string("OFF LED", 2)
+
 
 
 def main():
@@ -22,7 +31,8 @@ def main():
     lcd.lcd_clear()
 
     # Display something on LCD
-    lcd.lcd_display_string("Lab 5", 1)
+    lcd.lcd_display_string("LED Control", 1)
+    lcd.lcd_display_string("0:Off 1:Blink", 2)
 
     # Initialize the HAL keypad driver
     keypad.init(key_pressed)
